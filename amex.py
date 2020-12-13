@@ -80,7 +80,9 @@ def store_transactions(mydb, jsonfile):
         """,
         (ord["identifier"],ord["description"],ord["statement_end_date"],ord["charge_date"],ord["supplementary_index"],ord["amount"],ord["type"],ord["reference_id"],ord["post_date"],ord["first_name"],ord["last_name"],ord["embossed_name"],ord["account_token"]))
         mydb.commit()
-
+        
+    dbcur.close()
+    
 
 @click.command()
 
