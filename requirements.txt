@@ -1,0 +1,4 @@
+requests >= 2.25.0
+mysql-connector >= 2.2.9
+Click >= 7.1.2
+maya >= 0.6.1
