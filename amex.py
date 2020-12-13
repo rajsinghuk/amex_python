@@ -7,7 +7,6 @@ import mysql.connector
 
 from configparser import ConfigParser
 
-
 def store_json(mydb, jsonfile):
 
     dbcur = mydb.cursor()
@@ -30,13 +29,13 @@ def store_json(mydb, jsonfile):
     else:
         print ('Table datalake_json already exists')
 
-
     data = json.dumps(jsonfile)
  
     dbcur.execute("INSERT INTO datalake_json (JsonDump, DateCreated) VALUES (%s, NOW())",(data,))
     mydb.commit()
     dbcur.close()
 
+    
 def store_transactions(mydb, jsonfile):
 
     dbcur = mydb.cursor()
@@ -72,7 +71,6 @@ def store_transactions(mydb, jsonfile):
     else:
         print ('Table datalake_transactions already exists')
 
-
     for ord in jsonfile["transactions"]:
         print("description:", ord["description"])
         dbcur.execute("""
@@ -88,7 +86,7 @@ def store_transactions(mydb, jsonfile):
 
 @click.option(
     '--config-file',
-    default="D:\\Downloads\\amex.ini", ## remove pathfor final build
+    default="amex.ini",
     type=click.Path(exists=True, dir_okay=True, readable=True),
 )
 
