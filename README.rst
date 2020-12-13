@@ -1,7 +1,7 @@
 Amex_Python
 ---------
 
-Simple python project for downloading recent transactions data from `AmericanExpress.com`_ and loading it into `MySQL`_.
+Simple python project for downloading recent transactions data from AmericanExpress.com and loading it into MySQL.
 
 
 Prerequisites
